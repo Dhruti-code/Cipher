@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 
 // Load environment variables from .env
+dotenv.config();
 dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 
 export interface AppConfig {
@@ -9,6 +10,15 @@ export interface AppConfig {
   nodeEnv: 'development' | 'production' | 'test';
   clientUrl: string;
   databasePath: string;
+}
+
+export function getAllowedOrigins(raw: string): string[] | string {
+  if (!raw || raw.trim() === '*') return '*';
+  const origins = raw
+    .split(',')
+    .map((s) => s.trim().replace(/\/+$/, ''))
+    .filter(Boolean);
+  return origins.length > 1 ? origins : origins[0] || 'http://localhost:5173';
 }
 
 export const config: AppConfig = {

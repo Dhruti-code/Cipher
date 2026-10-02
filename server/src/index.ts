@@ -1,7 +1,7 @@
 import http from 'node:http';
 import express from 'express';
 import cors from 'cors';
-import { config } from './config/env';
+import { config, getAllowedOrigins } from './config/env';
 import { initDatabase, closeDb } from './db/database';
 import { initSocketGateway } from './sockets';
 import { apiRouter } from './routes';
@@ -22,10 +22,26 @@ async function bootstrap() {
 
   // 2. Setup Express Application
   const app = express();
+  const allowedOrigins = getAllowedOrigins(config.clientUrl);
+  console.log(`[CORS] Allowed origins:`, allowedOrigins);
 
   app.use(
     cors({
-      origin: config.clientUrl,
+      origin: (origin, callback) => {
+        // Allow requests with no origin (like mobile apps, curl, server-to-server)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins === '*' || allowedOrigins === origin) {
+          return callback(null, true);
+        }
+        if (Array.isArray(allowedOrigins) && (allowedOrigins.includes(origin) || allowedOrigins.includes('*'))) {
+          return callback(null, true);
+        }
+        // Also allow localhost during development
+        if (config.nodeEnv !== 'production' && /^http:\/\/localhost(:\d+)?$/.test(origin)) {
+          return callback(null, true);
+        }
+        callback(new Error(`Origin ${origin} not allowed by CORS`));
+      },
       credentials: true,
     })
   );
@@ -45,11 +61,11 @@ async function bootstrap() {
 
   // 3. Setup HTTP Server & Socket.IO Gateway
   const server = http.createServer(app);
-  initSocketGateway(server, { corsOrigin: config.clientUrl });
+  initSocketGateway(server, { corsOrigin: allowedOrigins });
 
   // 4. Start Server Listening
   server.listen(config.port, () => {
-    console.log(`[Server] HTTP and WebSocket listening on http://localhost:${config.port}`);
+    console.log(`[Server] HTTP and WebSocket listening on port ${config.port}`);
   });
 
   // Graceful shutdown handling

@@ -10,10 +10,19 @@ export interface HealthCheckResponse {
 
 export type UserSearchResult = { id: string; username: string };
 
+function resolveApiBaseUrl(): string {
+  const envUrl = import.meta.env.VITE_API_URL;
+  if (!envUrl) {
+    return '/api';
+  }
+  const clean = envUrl.trim().replace(/\/+$/, '');
+  return clean.endsWith('/api') ? clean : `${clean}/api`;
+}
+
 class ApiClient {
   private baseUrl: string;
 
-  constructor(baseUrl: string = '/api') {
+  constructor(baseUrl: string = resolveApiBaseUrl()) {
     this.baseUrl = baseUrl;
   }
 

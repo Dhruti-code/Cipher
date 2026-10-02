@@ -9,6 +9,18 @@ import {
   SocketUnreadUpdatePayload,
 } from 'chat-app-shared';
 
+function resolveSocketUrl(): string {
+  const socketEnv = import.meta.env.VITE_SOCKET_URL;
+  if (socketEnv) {
+    return socketEnv.trim().replace(/\/+$/, '');
+  }
+  const apiEnv = import.meta.env.VITE_API_URL;
+  if (apiEnv) {
+    return apiEnv.trim().replace(/\/api\/?$/, '').replace(/\/+$/, '');
+  }
+  return window.location.origin;
+}
+
 export type SocketConnectionState = 'connected' | 'connecting' | 'disconnected';
 
 class SocketService {
@@ -35,7 +47,7 @@ class SocketService {
     this.currentUserId = userId;
     this.setConnectionState('connecting');
 
-    const socketUrl = import.meta.env.VITE_SOCKET_URL || window.location.origin;
+    const socketUrl = resolveSocketUrl();
 
     this.socket = io(socketUrl, {
       auth: { userId },

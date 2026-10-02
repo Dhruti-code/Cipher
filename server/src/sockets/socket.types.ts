@@ -6,5 +6,5 @@ export interface AuthenticatedSocket extends Socket {
 }
 
 export interface SocketGatewayOptions {
-  corsOrigin: string;
+  corsOrigin: string | string[];
 }
