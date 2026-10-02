@@ -24,7 +24,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onGetStarted }) =>
         {/* Heading & Tagline */}
         <div className="flex flex-col gap-2">
           <h1 className="text-4xl md:text-5xl font-bold sketch-heading text-sketch-fg tracking-tight">
-            Welcome to ChatApp
+            Welcome to Cipher
           </h1>
           <p className="text-xl md:text-2xl text-sketch-fg/80 leading-relaxed font-body">
             Personal conversations<br />made simple.
@@ -40,7 +40,7 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onGetStarted }) =>
             variant="primary"
             onClick={onGetStarted}
             className="w-full sm:w-auto min-w-[200px] min-h-[48px] text-xl px-8 py-3"
-            aria-label="Get Started with ChatApp"
+            aria-label="Get Started with Cipher"
           >
             Get Started
           </SketchButton>

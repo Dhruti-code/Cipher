@@ -38,7 +38,7 @@ export const PwaInstallButton: React.FC<PwaInstallButtonProps> = ({ className = 
     <div className={`relative inline-block ${className}`}>
       <button
         onClick={handleInstallClick}
-        title="Install Sketch Chat as an app"
+        title="Install Cipher as an app"
         className="flex items-center gap-1.5 px-2.5 py-1 text-xs sm:text-sm font-heading font-bold text-sketch-fg bg-sketch-paper hover:bg-sketch-muted border-2 border-sketch-line rounded-sketch-btn shadow-sketch-sm active:translate-x-0.5 active:translate-y-0.5 transition-transform"
       >
         <Download className="w-3.5 h-3.5 text-sketch-accent" />

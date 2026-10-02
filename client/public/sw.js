@@ -1,10 +1,10 @@
 /**
- * Service Worker: Sketch Chat PWA
+ * Service Worker: Cipher PWA
  * Handles offline app shell caching and PWA installability criteria.
  * Dynamic real-time traffic (Socket.IO and /api/*) is strictly bypassed.
  */
 
-const CACHE_NAME = 'sketch-chat-shell-v1';
+const CACHE_NAME = 'cipher-shell-v1';
 
 // Minimal critical shell assets pre-cached on install
 const PRECACHE_ASSETS = [

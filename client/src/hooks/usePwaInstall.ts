@@ -49,7 +49,7 @@ export function usePwaInstall(): UsePwaInstallReturn {
     const handleAppInstalled = () => {
       setIsInstalled(true);
       setDeferredPrompt(null);
-      console.log('[PWA] Sketch Chat was successfully installed!');
+      console.log('[PWA] Cipher was successfully installed!');
     };
 
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);

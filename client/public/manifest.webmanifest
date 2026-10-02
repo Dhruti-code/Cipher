@@ -1,7 +1,7 @@
 {
   "id": "/",
-  "name": "Sketch Chat - Personal Real-Time Chat",
-  "short_name": "Sketch Chat",
+  "name": "Cipher - Personal Real-Time Chat",
+  "short_name": "Cipher",
   "description": "Hand-drawn real-time 1-to-1 personal messaging web app",
   "start_url": "/",
   "scope": "/",

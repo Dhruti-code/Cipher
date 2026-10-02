@@ -221,7 +221,7 @@ export const ChatHomeScreen: React.FC<ChatHomeScreenProps> = ({
             <MessageSquareText className="w-5 h-5 text-sketch-secondary" strokeWidth={2.2} />
           </div>
           <span className="text-3xl font-bold sketch-heading text-sketch-fg tracking-tight">
-            ChatApp
+            Cipher
           </span>
         </div>
 
