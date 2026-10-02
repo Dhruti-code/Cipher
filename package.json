@@ -16,11 +16,17 @@
     "build:server": "npm run build -w shared && npm run build -w server",
     "build:client": "npm run build -w shared && npm run build -w client",
     "start": "npm run start -w server",
+    "start:server": "npm run start -w server",
     "typecheck": "npm run typecheck -w server && npm run typecheck -w client",
     "lint": "npm run lint -w client"
   },
-  "devDependencies": {
-    "concurrently": "^9.1.2",
+  "dependencies": {
     "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
 }

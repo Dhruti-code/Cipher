@@ -67,6 +67,7 @@ The application is deployed as **two interconnected services** on Render:
 | Variable | Required | Production Value | Purpose |
 |---|---|---|---|
 | `NODE_ENV` | Yes | `production` | Enables production optimizations and security headers. |
+| `NODE_VERSION` | Yes | `22.13.0` (or `22`) | Ensures Node >= 22.5 is used for built-in `node:sqlite` support. |
 | `PORT` | Auto | *(Injected by Render automatically)* | Port Express/Socket.IO listens on. Defaults to 3001 locally. |
 | `CLIENT_URL` | Yes | `https://<your-frontend-site>.onrender.com` | Allowed origin for CORS and Socket.IO. Supports multiple comma-separated URLs. |
 | `DATABASE_PATH` | Optional | `./data/chat.db` *(or `/var/data/chat.db` if using Persistent Disk)* | Absolute or relative path to SQLite database file. |
