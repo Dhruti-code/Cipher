@@ -1,0 +1,51 @@
+/**
+ * SKETCH DESIGN SYSTEM - CENTRALIZED TOKENS
+ *
+ * All values follow the strict project design guidelines:
+ * - Hand-drawn appearance
+ * - Wobbly borders
+ * - Irregular border-radius
+ * - Paper-like background
+ * - Hard offset shadows (NO blurred shadows)
+ * - Typography: Kalam (700) for Headings, Patrick Hand (400) for Body/UI
+ */
+
+:root {
+  /* Colors */
+  --sketch-bg: #fdfbf7;
+  --sketch-fg: #2d2d2d;
+  --sketch-muted: #e5e0d8;
+  --sketch-accent: #ff4d4d;
+  --sketch-secondary: #2d5da1;
+  --sketch-paper: #f9f6ef;
+  --sketch-card-bg: #ffffff;
+  --sketch-border-color: #2d2d2d;
+
+  /* Typography */
+  --sketch-font-heading: 'Kalam', cursive, sans-serif;
+  --sketch-font-body: 'Patrick Hand', cursive, sans-serif;
+  --sketch-font-heading-weight: 700;
+  --sketch-font-body-weight: 400;
+
+  /* Hard Offset Shadows (NO blur radius allowed) */
+  --sketch-shadow-xs: 1px 1px 0px var(--sketch-border-color);
+  --sketch-shadow-sm: 2px 2px 0px var(--sketch-border-color);
+  --sketch-shadow: 3px 3px 0px var(--sketch-border-color);
+  --sketch-shadow-md: 4px 4px 0px var(--sketch-border-color);
+  --sketch-shadow-lg: 6px 6px 0px var(--sketch-border-color);
+  --sketch-shadow-accent: 3px 3px 0px var(--sketch-accent);
+  --sketch-shadow-secondary: 3px 3px 0px var(--sketch-secondary);
+  --sketch-shadow-active: 1px 1px 0px var(--sketch-border-color);
+
+  /* Irregular / Wobbly Border Radius */
+  --sketch-radius-wobbly: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  --sketch-radius-card: 255px 25px 225px 25px / 25px 225px 25px 255px;
+  --sketch-radius-button: 255px 20px 225px 20px / 20px 225px 20px 255px;
+  --sketch-radius-input: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  --sketch-radius-badge: 120px 20px 100px 20px / 20px 100px 20px 120px;
+  --sketch-radius-round: 50% 50% 50% 50% / 60% 60% 40% 40%;
+
+  /* Borders */
+  --sketch-border-width: 2px;
+  --sketch-border-thick: 3px;
+}

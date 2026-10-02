@@ -1,0 +1,122 @@
+/**
+ * SKETCH DESIGN SYSTEM - REUSABLE UTILITY CLASSES
+ *
+ * Implements the tactile, hand-drawn paper aesthetic:
+ * - Wobbly borders and asymmetric curves
+ * - Hard offset shadows without Gaussian blur
+ * - Playful micro-rotations
+ * - Interactive tactile press behavior
+ */
+
+.sketch-box {
+  border: var(--sketch-border-width) solid var(--sketch-border-color);
+  border-radius: var(--sketch-radius-card);
+  box-shadow: var(--sketch-shadow);
+  background-color: #ffffff;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sketch-box-paper {
+  background-color: var(--sketch-paper);
+}
+
+.sketch-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--sketch-border-width) solid var(--sketch-border-color);
+  border-radius: var(--sketch-radius-button);
+  box-shadow: var(--sketch-shadow);
+  font-family: var(--sketch-font-body);
+  font-size: 1.125rem;
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  background-color: #ffffff;
+  color: var(--sketch-fg);
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
+}
+
+.sketch-button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--sketch-shadow-md);
+}
+
+.sketch-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: var(--sketch-shadow-active);
+}
+
+.sketch-button-accent {
+  background-color: var(--sketch-accent);
+  color: #ffffff;
+  border-color: var(--sketch-border-color);
+  box-shadow: var(--sketch-shadow);
+}
+
+.sketch-button-accent:hover {
+  background-color: #f03e3e;
+}
+
+.sketch-button-secondary {
+  background-color: var(--sketch-secondary);
+  color: #ffffff;
+  border-color: var(--sketch-border-color);
+}
+
+.sketch-button-secondary:hover {
+  background-color: #234c85;
+}
+
+.sketch-input {
+  border: var(--sketch-border-width) solid var(--sketch-border-color);
+  border-radius: var(--sketch-radius-input);
+  box-shadow: var(--sketch-shadow-sm);
+  background-color: #ffffff;
+  color: var(--sketch-fg);
+  padding: 0.5rem 0.875rem;
+  font-family: var(--sketch-font-body);
+  font-size: 1.125rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sketch-input:focus {
+  border-color: var(--sketch-secondary);
+  box-shadow: var(--sketch-shadow);
+}
+
+.sketch-input::placeholder {
+  color: #8c827a;
+}
+
+.sketch-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.65rem;
+  border: 1.5px solid var(--sketch-border-color);
+  border-radius: var(--sketch-radius-badge);
+  box-shadow: var(--sketch-shadow-xs);
+  font-family: var(--sketch-font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: var(--sketch-muted);
+  color: var(--sketch-fg);
+}
+
+.sketch-heading {
+  font-family: var(--sketch-font-heading);
+  font-weight: var(--sketch-font-heading-weight);
+  letter-spacing: -0.01em;
+}
+
+.sketch-divider {
+  border: none;
+  height: 2px;
+  background: var(--sketch-border-color);
+  margin: 1.25rem 0;
+  border-radius: 999px;
+  opacity: 0.85;
+}

@@ -1,0 +1,19 @@
+@import './styles/tokens.css';
+@import './styles/sketch.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  background-color: var(--sketch-bg);
+  color: var(--sketch-fg);
+  font-family: var(--sketch-font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--sketch-font-heading);
+  font-weight: var(--sketch-font-heading-weight);
+}
