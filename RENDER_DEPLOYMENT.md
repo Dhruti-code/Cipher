@@ -221,3 +221,16 @@ Once both services show **Live**:
 - **Symptom:** Registered users and conversations are lost when the server restarts.
 - **Cause:** Free-tier Render containers spin down after inactivity and wipe ephemeral disk storage.
 - **Fix:** Add a **Render Persistent Disk** mounted at `/var/data` and configure `DATABASE_PATH=/var/data/chat.db`.
+
+---
+
+## 10. Progressive Web App (PWA) Installation
+
+The application includes complete Progressive Web App (PWA) support:
+- **Web App Manifest:** Available at `/manifest.webmanifest` and `/manifest.json`.
+- **Service Worker:** Located at `/sw.js` for offline app shell caching and instant asset loading.
+- **Icons:** 192x192, 512x512, maskable icons, and apple-touch-icon in `/icons/`.
+- **Desktop (Chrome / Edge):** Click the "Install" badge in the browser's address bar or the "Install App" button in the app header to install as a standalone desktop app with dedicated window controls.
+- **Android (Chrome / Samsung Internet):** Tap "Install App" or choose "Add to Home screen" in the browser menu.
+- **iOS (Safari):** Tap the Share button in Safari, then tap "Add to Home Screen".
+

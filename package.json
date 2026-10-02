@@ -18,7 +18,8 @@
     "start": "npm run start -w server",
     "start:server": "npm run start -w server",
     "typecheck": "npm run typecheck -w server && npm run typecheck -w client",
-    "lint": "npm run lint -w client"
+    "lint": "npm run lint -w client",
+    "generate:icons": "node scripts/generate_pwa_icons.cjs"
   },
   "dependencies": {
     "typescript": "^5.7.3"

@@ -5,6 +5,7 @@ import { socketService } from '../services/socket';
 import { SketchBox } from '../components/ui/SketchBox';
 import { SketchBadge } from '../components/ui/SketchBadge';
 import { UserDetailsModal } from '../components/UserDetailsModal';
+import { PwaInstallButton } from '../components/PwaInstallButton';
 import {
   MessageSquareText,
   Search,
@@ -225,6 +226,7 @@ export const ChatHomeScreen: React.FC<ChatHomeScreenProps> = ({
         </div>
 
         <div className="flex items-center gap-2">
+          <PwaInstallButton />
           <div className="hidden sm:flex items-center gap-1.5 bg-white border-2 border-sketch-line rounded-sketch-badge px-3 py-1.5 shadow-sketch-xs">
             <UserCheck className="w-4 h-4 text-sketch-secondary" />
             <span className="font-heading text-base font-bold text-sketch-fg">

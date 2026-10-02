@@ -1,6 +1,7 @@
 import React from 'react';
 import { SketchBox } from '../components/ui/SketchBox';
 import { SketchButton } from '../components/ui/SketchButton';
+import { PwaInstallButton } from '../components/PwaInstallButton';
 import { MessageSquareText } from 'lucide-react';
 
 export interface WelcomeScreenProps {
@@ -33,15 +34,19 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onGetStarted }) =>
         {/* Decorative sketch line */}
         <div className="w-24 h-0.5 bg-sketch-line/40 rounded-full" />
 
-        {/* Primary CTA */}
-        <SketchButton
-          variant="primary"
-          onClick={onGetStarted}
-          className="w-full sm:w-auto min-w-[200px] min-h-[48px] text-xl px-8 py-3"
-          aria-label="Get Started with ChatApp"
-        >
-          Get Started
-        </SketchButton>
+        {/* Actions */}
+        <div className="flex flex-col items-center gap-3 w-full">
+          <SketchButton
+            variant="primary"
+            onClick={onGetStarted}
+            className="w-full sm:w-auto min-w-[200px] min-h-[48px] text-xl px-8 py-3"
+            aria-label="Get Started with ChatApp"
+          >
+            Get Started
+          </SketchButton>
+
+          <PwaInstallButton className="mt-1" />
+        </div>
       </SketchBox>
     </div>
   );
